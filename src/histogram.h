@@ -8,17 +8,22 @@
 #include <vector>
 using namespace std;
 
-class histogram {
+class Histogram {
 private:
-    int buckets;
-    float min;
-    float max;
-    vector<float> hist;
+    int buckets_num_;
+    float min_;
+    float max_;
+    float bucket_range_;
+    vector<float> hist_;
+    vector<int> height_;
+
 public:
-    histogram();
-    histogram(int b, float _min, float _max);
-    ~histogram();
-    const void print_hist();
+    Histogram();
+    Histogram(int num, float _min, float _max);
+    ~Histogram();
+    void printHist() const;
+    void scan(const vector<float> &data);
+//    void scan(const vector<int> &data);
 };
 
 
